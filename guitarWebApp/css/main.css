@@ -1,0 +1,41 @@
+/*tag 선택자*/
+body {
+    font-family: "맑은 고딕","돋움","굴림";
+    background: url("../img/bg.JPG") no-repeat left top fixed;
+    background-size: cover; /*문서 크기에 따라 배경이미지 크기도 조절 */
+}
+/*ID 선택자 */
+#wrapper {
+    margin: 10px auto;
+    width: 890px;
+}
+article {
+    display: block; /* article 태그를 블록 컨텐트로 지정 */
+    margin: 15px auto 0;
+    border: 1px solid #fff;
+}
+nav {
+    width: 100%; /* 너비는 부모인 article의 너비와 같게*/
+    height: 40px;
+    background-color: #222;
+}
+section {
+    padding: 5px 20px;
+    border-left: 2px solid #222;
+    border-right: 2px solid #222;
+    background-color: rgba(255,255,255,.9);
+}
+nav ul {
+    list-style:none;    /*불릿기호 없애기*/
+}
+nav ul li {
+    float: left;
+    /*display: inline;*/
+    margin: 10px;
+}
+nav a,h1 a {
+    padding: 6px 35px 9px;
+    color: white;
+    text-decoration: none; /* 링크 밑줄 없애기 */
+
+}
