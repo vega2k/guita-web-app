@@ -13,6 +13,7 @@
                     exist_count = Number(localStorage.getItem('numFavorites'));
                 }
                 spanTags = document.getElementsByTagName('span');
+                console.log(spanTags);
                 var count = 0;
                 for(var i=0;i<spanTags.length;i++) {
                     if(spanTags[i].firstChild.checked == true) {
