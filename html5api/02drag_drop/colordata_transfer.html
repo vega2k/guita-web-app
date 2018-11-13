@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dragBlue{
+            border:2px solid blue;
+            width: 100px;
+            margin:10px;
+        }
+        #dragRed {
+            border:2px solid red;
+            width:100px;
+            margin:10px;
+        }
+        #drop {
+            border:2px solid black;
+            width:300px;
+            height: 200px;
+            margin:50px;
+            background-color:yellow;
+        }
+    </style>
+    <script>
+        var dragBlue;
+        var dragRed;
+        var dropDiv;
+
+        window.onload = function() {
+            init();
+        }
+
+        function init() {
+            dragBlue = document.getElementById("dragBlue");
+            dragRed = document.getElementById("dragRed");
+            dropDiv = document.getElementById("drop");
+
+            dragBlue.addEventListener("dragstart",startFunc);
+            dragRed.addEventListener("dragstart",startFunc);
+            dropDiv.addEventListener("dragover",overFunc);
+            dropDiv.addEventListener("drop",dropFunc);
+        }
+
+        function dropFunc(event) {
+            event.preventDefault();
+            var color_name = event.dataTransfer.getData("bcolor");
+            dropDiv.style["background-color"] = color_name;
+        }
+        function startFunc(event) {
+            var color = event.target.innerText;
+            console.log(color);
+            event.dataTransfer.setData("bcolor",color);
+        }
+        
+        function overFunc(event) {
+            event.preventDefault();
+            console.log("drop zone 영역 안으로 들어옴");
+        }
+    </script>
+</head>
+<body>
+    <span id="dragBlue" draggable="true">blue</span>
+    <span id="dragRed" draggable="true">red</span>
+
+    <div id="drop" dropzone="copy">Hello Color</div>
+
+</body>
+</html>
